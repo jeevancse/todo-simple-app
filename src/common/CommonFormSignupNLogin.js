@@ -1,7 +1,7 @@
 import { TabPanel } from "@mui/lab";
 import { Button, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import SignUpError from "../formError/signup.error";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import axios from "axios";
@@ -15,7 +15,7 @@ function CommonFormSignupNLogin({ type }) {
     email: false,
     password: false,
   });
-  const [resp, setResp] = useState({});
+  // const [resp, setResp] = useState({});
   const onchangeHandler = (e) => {
     setSuccess("");
     setFormValues({ ...formValue, [e.target.name]: e.target.value });
@@ -58,7 +58,7 @@ function CommonFormSignupNLogin({ type }) {
       } else if (response.data.code === 401) {
         setSuccess(response?.data?.message);
       }
-      setResp(response);
+      // setResp(response);
     } catch (err) {}
   };
   return (

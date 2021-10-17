@@ -18,7 +18,7 @@ function Auth() {
       <div className="grid-item"></div>
       <div className="grid-item signup">
         <div>
-          <img src="http://localhost:3000/signup.jpg" alt="signup" />
+          <img src={process.env.ASSET_URL+"signup.jpg"} alt="signup" />
         </div>
         <div
           className="from-design"
