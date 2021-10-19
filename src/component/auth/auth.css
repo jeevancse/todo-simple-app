@@ -1,69 +1,64 @@
 .grid-contailer {
-    display: grid;
-    grid-template-columns: auto auto auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
 
 .signup {
-    /* margin-left: 400px; */
-   margin-top: 200px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  /* margin-left: 400px; */
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .saprater {
-    margin-top: 30px;
-    width: 50%;
-    box-shadow: rgb(223, 215, 215);
+  margin-top: 30px;
+  width: 50%;
+  box-shadow: rgb(223, 215, 215);
 }
 
-
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+  /* outline: none !important; */
+  /* box-shadow: none !important;
+   */
+  border: 2px solid white;
+}
 
 .css-1aquho2-MuiTabs-indicator {
-    width: 22px !important;
-    margin-left: 18px !important;
-    bottom: 10px !important;
+  width: 22px !important;
+  margin-left: 18px !important;
+  bottom: 10px !important;
 }
 .from-design {
-    
-    margin-left: 40px;
-    border-radius: 40px;
-    width: 420px;
-    height: 500px;
-    border: 1.5px solid #113a59;
+  margin-left: 40px;
+  border-radius: 40px;
+  width: 420px;
+  height: 500px;
+  border: 1.5px solid #113a59;
 }
 
 .button {
-    margin-left: 5px;
-      
-
+  margin-left: 5px;
 }
 
 .sinup {
-    font-size: 20px;
-    font-size: bold;
-    padding: 5px;
-    margin: 5px;
+  font-size: 20px;
+  font-size: bold;
+  padding: 5px;
+  margin: 5px;
 }
 .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
-    height: 0.4375em  !important;
-
+  height: 0.4375em !important;
 }
 
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
-    line-height: 0.10em !important;
+  line-height: 0.1em !important;
 }
-/* .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root  {
-    outline: none !important;
-    border: none !important;
-} */
 
-.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input:focus  {
-    outline: none !important;
-    /* border: none !important; */
+.hide {
+  display: none;
+}
 
- }
-
- .hide {
-     display: none;
- }
+.MuiOutlinedInput-root {
+  border-radius: 10px !important;
+}

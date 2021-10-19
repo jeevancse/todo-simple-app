@@ -2,12 +2,12 @@ import { useState } from "react";
 // import axios from "axios";
 import { axiosInstance } from "./axios/axiosInstance";
 
-const SignupApiImp = async (formValue) => {
+const LoginApiImplementation = async (formValue) => {
   try {
-    const { name, email, password } = formValue;
+    const {email, password } = formValue;
     const response = await axiosInstance.post(
-      `pub/register`,
-      { name, email, password }
+      `pub/login`,
+      {email, password }
     );
     return response;
     // setResp(response);
@@ -16,4 +16,4 @@ const SignupApiImp = async (formValue) => {
   }
 };
 
-export default SignupApiImp;
+export default LoginApiImplementation;
