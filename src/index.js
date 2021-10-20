@@ -16,6 +16,8 @@ ReactDOM.render(
       ) : (
         <Route exact path="/" component={Auth} />
       )}
+        <Route exact path="/home" component={Homepage} />
+
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
