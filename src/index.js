@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import Auth from "./component/auth/Auth";
 import { BrowserRouter, Route } from "react-router-dom";
 import Homepage from "./component/home/Homepage";
+import ShowTask from "./common/ShowTask";
 
 const token = localStorage.getItem("authToken");
 
@@ -16,7 +17,7 @@ ReactDOM.render(
       ) : (
         <Route exact path="/" component={Auth} />
       )}
-        <Route exact path="/home" component={Homepage} />
+        <Route exact path="/home/task" component={ShowTask} />
 
     </BrowserRouter>
   </React.StrictMode>,

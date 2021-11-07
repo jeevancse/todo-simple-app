@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Grid,
   List,
@@ -8,7 +8,7 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
-import { Box } from "@mui/system";
+import Box from "@mui/material/Box";
 import {
   Home,
   EqualizerOutlined,
@@ -19,48 +19,74 @@ import {
 import "./homepage.css";
 import { Header } from "../../common/Header";
 import { CommingSoon } from "../../common/CommingSoon";
+import ProjectPage from "../project/ProjectPage";
+
 function Homepage() {
-  const ListItmes = [
-    { icon: <Home />, title: "Overview" },
-    { icon: <EqualizerOutlined />, title: "Stats" },
-    { icon: <FolderOpen />, title: "Projects" },
-    { icon: <SmsOutlined />, title: "Chat" },
-    { icon: <DateRangeRounded />, title: "Calender" },
-  ];
+  const [currentState, setCurrentState] = useState(1);
   return (
     <>
-      <Grid container spacing={1}>
+      <Grid container>
         <Grid item md={2} xs={2}>
-          <Typography
-            style={{
-              marginLeft: "35px",
-              marginBottom: "60px",
-              marginTop: "12px",
-            }}
-            variant="h4"
-          >
-            {".taskez"}
-          </Typography>
-          <Box>
-            <List style={{ marginLeft: "15px" }}>
-              {ListItmes.map((item, index) => (
-                <ListItem button key={index} style={{marginTop:"10px"}}>
-                  <ListItemIcon >{item.icon}</ListItemIcon>
-                  <ListItemText primary={item.title} />
+          <Box style={{ position: "fixed" }}>
+            <div style={{ display: "flex" }}>
+              <List style={{ marginTop: "30px", paddingLeft: "24px" }}>
+                <Typography
+                  variant="h4"
+                  style={{ paddingBottom: "25px", paddingLeft: "25px" }}
+                  align="left"
+                >
+                  {".taskez"}
+                </Typography>
+                <ListItem button onClick={() => setCurrentState(1)}>
+                  <ListItemIcon>
+                    <Home />
+                  </ListItemIcon>
+                  <ListItemText>Overview </ListItemText>
                 </ListItem>
-              ))}
-            </List>
+                <ListItem button onClick={() => setCurrentState(2)}>
+                  <ListItemIcon>
+                    <EqualizerOutlined />
+                  </ListItemIcon>
+                  <ListItemText> </ListItemText>
+                </ListItem>
+                <ListItem button onClick={() => setCurrentState(3)}>
+                  <ListItemIcon>
+                    <FolderOpen />
+                  </ListItemIcon>
+                  <ListItemText>Projects </ListItemText>
+                </ListItem>
+                <ListItem button onClick={() => setCurrentState(4)}>
+                  <ListItemIcon>
+                    <SmsOutlined />
+                  </ListItemIcon>
+                  <ListItemText>Chat </ListItemText>
+                </ListItem>
+                <ListItem button onClick={() => setCurrentState(5)}>
+                  <ListItemIcon>
+                    <DateRangeRounded />
+                  </ListItemIcon>
+                  <ListItemText>Calender </ListItemText>
+                </ListItem>
+              </List>
+              <div
+                style={{
+                  borderLeft: "1px solid #000",
+                  height: "100vh",
+                  marginLeft: "90px",
+                }}
+              ></div>
+            </div>
           </Box>
         </Grid>
-        <Divider orientation="vertical" flexItem />
         <Grid item md={9} xs={9}>
-          <Grid container spacing={2}>
-            <Grid item md={1} xs={1}></Grid>
+          <Grid container flexGrow={1}>
+            <Grid item md={2} xs={2}></Grid>
             <Grid item md={10} xs={10}>
               <Header />
-              <CommingSoon/>
+              <Box marginTop="40px">
+                {currentState === 3 ? <ProjectPage /> : <CommingSoon />}
+              </Box>
             </Grid>
-            <Grid item md={1} xs={1}></Grid>
           </Grid>
         </Grid>
       </Grid>

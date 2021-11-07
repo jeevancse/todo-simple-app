@@ -11,7 +11,7 @@ export const CommingSoon = () => {
         alignItems="center"
         justifyContent="center"
       >
-        Comming Soon.....
+        Comming Soon....
       </Typography>
     </>
   );

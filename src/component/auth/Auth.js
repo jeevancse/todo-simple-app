@@ -18,7 +18,7 @@ function Auth() {
       <div className="grid-item"></div>
       <div className="grid-item signup">
         <div>
-          <img src="https://todo-simple-frontend-app.herokuapp.com/signup.jpg" alt="signup" />
+          <img src="http://localhost:3000/signup.jpg" alt="signup" />
         </div>
         <div
           className="from-design"
