@@ -7,16 +7,13 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Homepage from "./component/home/Homepage";
 import ShowTask from "./common/ShowTask";
 
-const token = localStorage.getItem("authToken");
+// const token = localStorage.getItem("authToken");
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      {token ? (
         <Route exact path="/home" component={Homepage} />
-      ) : (
         <Route exact path="/" component={Auth} />
-      )}
         <Route exact path="/home/task" component={ShowTask} />
 
     </BrowserRouter>

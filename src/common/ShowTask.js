@@ -1,5 +1,4 @@
 const ShowTask = ({ data}) => {
-    console.log("=====>>>>state", data)
   return (
     <div>
       <h4>{}</h4>
