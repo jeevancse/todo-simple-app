@@ -1,10 +1,7 @@
 import { Grid, Paper, Typography, Box, Button } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router";
-import { Link } from "react-router-dom";
 import { AddTask, GetTask, UpdateTask } from "../../Apis/task.api";
 import AddTaskForm from "../../common/AddTaskForm";
-import ShowTask from "../../common/ShowTask";
 import Task from "../../common/Task";
 const ProjectPage = () => {
   const [flag, setFlag] = useState(true);
@@ -13,8 +10,6 @@ const ProjectPage = () => {
     inProgress: 0,
     completed: 0,
   });
-  const history = useHistory()
-  // const [showTask, setShowTask ] = useState(false)
 
   const [form, setForm] = useState({
     todo: false,
@@ -62,9 +57,6 @@ const ProjectPage = () => {
     })();
   }, [flag]);
 
-  useEffect(() => {
-    console.log("=====>>>task", taskCount);
-  }, [taskCount]);
   const onSubmitHandlerInProgress = async () => {
     values.status = "inprogress";
     const resp = await AddTask(values);
@@ -114,7 +106,9 @@ const ProjectPage = () => {
           >
             <Box style={{ marginLeft: "10px", marginRight: "10px" }}>
               <Box style={{ display: "flex", justifyContent: "space-between" }}>
-                <Typography variant="h6" style={{fontSize:"18px"}}>To do</Typography>
+                <Typography variant="h6" style={{ fontSize: "18px" }}>
+                  To do
+                </Typography>
                 <Button
                   style={{
                     fontSize: "17px",
@@ -220,7 +214,9 @@ const ProjectPage = () => {
                 <Box
                   style={{ display: "flex", justifyContent: "space-between" }}
                 >
-                  <Typography variant="h6" style={{fontSize:"18spx"}}>In progress</Typography>
+                  <Typography variant="h6" style={{ fontSize: "18spx" }}>
+                    In progress
+                  </Typography>
                   <Button
                     style={{
                       fontSize: "17px",
@@ -261,11 +257,6 @@ const ProjectPage = () => {
                   return (
                     <div
                       key={i}
-                      onClick={(el) => {
-                        console.log("====data", el, data)
-                      
-
-                      }}
                       style={{ marginLeft: "10px", marginRight: "10px" }}
                       draggable
                       id="second"
@@ -275,12 +266,10 @@ const ProjectPage = () => {
                     >
                       {" "}
                       {data.status === "inprogress" ? (
-                        <Link to="/home/task"  style={{textDecoration:"none" }}>
-                        <Task
-                          title={data.title}
-                          description={data.description}
-                        />
-                        </Link>
+                          <Task
+                            title={data.title}
+                            description={data.description}
+                          />
                       ) : (
                         ""
                       )}
@@ -319,7 +308,9 @@ const ProjectPage = () => {
                 <Box
                   style={{ display: "flex", justifyContent: "space-between" }}
                 >
-                  <Typography variant="h6" style={{fontSize:"18px"}}>Completed</Typography>
+                  <Typography variant="h6" style={{ fontSize: "18px" }}>
+                    Completed
+                  </Typography>
                   <Button
                     style={{
                       fontSize: "17px",

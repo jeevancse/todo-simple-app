@@ -1,10 +1,12 @@
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-import { Link } from "react-router-dom";
-
 const Task = ({  title, description }) => {
+
+
+
+  console.log("====here", process.env.REACT_APP_API_URL)
 
   return (
     <>
+    <a href="/" style={{textDecoration:"none"}}>
       <div
         style={{
           padding: "20px",
@@ -33,11 +35,11 @@ const Task = ({  title, description }) => {
             marginTop: "10px",
           }}
         >
-          {/* <PersonIcon style={{ fontSize: "17px" }} /> */}
-          <img src="http://localhost:3000/user.png" alt="user" width="35px" height="25px"/>
-          <ChatBubbleOutlineIcon style={{ fontSize: "17px" }} />
+          <img src={process.env.REACT_APP_ASSET_URL+"user.png"} alt="user" width="35px" height="25px"/>
+          <img src={process.env.REACT_APP_ASSET_URL+"sms.png"} alt="user" width="25px" height="25px"/>
         </div>
       </div>
+      </a>
     </>
   );
 

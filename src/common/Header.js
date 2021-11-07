@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 
-export const Header = () => {
+export const Header = ({user}) => {
+
   return (
     <>
       <div
@@ -9,12 +10,14 @@ export const Header = () => {
           marginTop: "10px",
           justifyContent: "space-between",
           paddingTop: "25px",
+          paddingRight:"35px"
         }}
       >
         <Typography variant="h6" color="black" style={{ fontWeight: "bold" }}>
           .taskez
         </Typography>
-        <Typography color="black">Hello, {"jeevan"} </Typography>
+        <p dir="rtl">Hello, {" "+user?.name}</p>
+        {/* <Typography color="black" >Hi, {user?.name} </Typography> */}
       </div>
     </>
   );

@@ -5,7 +5,6 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  Divider,
   Typography,
 } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -20,9 +19,21 @@ import "./homepage.css";
 import { Header } from "../../common/Header";
 import { CommingSoon } from "../../common/CommingSoon";
 import ProjectPage from "../project/ProjectPage";
+import { GetUserProfile } from "../../Apis/auth.api";
 
 function Homepage() {
   const [currentState, setCurrentState] = useState(1);
+  const [user, setUserData] = useState({});
+  useEffect(() => {
+    (async () => {
+      const user = await GetUserProfile();
+      if (user.data.code === 200) {
+        setUserData(user?.data?.data);
+      } else {
+        alert("Something went wrong")
+      }
+    })();
+  },[])
   return (
     <>
       <Grid container>
@@ -47,7 +58,7 @@ function Homepage() {
                   <ListItemIcon>
                     <EqualizerOutlined />
                   </ListItemIcon>
-                  <ListItemText> </ListItemText>
+                  <ListItemText>Stats </ListItemText>
                 </ListItem>
                 <ListItem button onClick={() => setCurrentState(3)}>
                   <ListItemIcon>
@@ -82,7 +93,7 @@ function Homepage() {
           <Grid container flexGrow={1}>
             <Grid item md={2} xs={2}></Grid>
             <Grid item md={10} xs={10}>
-              <Header />
+              <Header user = {user}/>
               <Box marginTop="40px">
                 {currentState === 3 ? <ProjectPage /> : <CommingSoon />}
               </Box>
