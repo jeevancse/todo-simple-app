@@ -1,8 +1,8 @@
 const Task = ({  title, description }) => {
 
+const ASSET_URL = process.env.REACT_APP_ASSET_URL || "http://localhost:3000/"
 
-
-  console.log("====here", process.env.REACT_APP_API_URL)
+  console.log("====here", ASSET_URL)
 
   return (
     <>
@@ -35,8 +35,8 @@ const Task = ({  title, description }) => {
             marginTop: "10px",
           }}
         >
-          <img src={process.env.REACT_APP_ASSET_URL+"user.png"} alt="user" width="35px" height="25px"/>
-          <img src={process.env.REACT_APP_ASSET_URL+"sms.png"} alt="user" width="25px" height="25px"/>
+          <img src={ASSET_URL+"user.png"} alt="user" width="35px" height="25px"/>
+          <img src={ASSET_URL+"sms.png"} alt="user" width="25px" height="25px"/>
         </div>
       </div>
       </a>

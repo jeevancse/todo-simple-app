@@ -1,7 +1,7 @@
 {
-  "name": "simple-todo-app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "jeevan-task",
+  "description": "a really cool app",
+  "version": "1.1.0",
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
