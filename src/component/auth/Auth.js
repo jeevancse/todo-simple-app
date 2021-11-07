@@ -6,6 +6,7 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import CommonFormSignupNLogin from "../../common/CommonFormSignupNLogin";
+const ASSET_URL = process.env.REACT_APP_ASSET_URL || "http://localhost:3000/"
 
 function Auth() {
   const [value, setValue] = useState("1");
@@ -18,7 +19,7 @@ function Auth() {
       <div className="grid-item"></div>
       <div className="grid-item signup">
         <div>
-          <img src="http://localhost:3000/signup.jpg" alt="signup" />
+          <img src={ASSET_URL+"signup.jpg"} alt="signup" />
         </div>
         <div
           className="from-design"
