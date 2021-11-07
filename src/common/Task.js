@@ -2,7 +2,6 @@ const Task = ({  title, description }) => {
 
 const ASSET_URL = process.env.REACT_APP_ASSET_URL || "http://localhost:3000/"
 
-  console.log("====here", ASSET_URL)
 
   return (
     <>

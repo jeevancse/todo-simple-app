@@ -27,8 +27,8 @@ function Homepage() {
   useEffect(() => {
     (async () => {
       const user = await GetUserProfile();
-      if (user.data.code === 200) {
-        setUserData(user?.data?.data);
+      if (user?.data?.code === 200) {
+        setUserData(user.data?.data);
       } else {
         alert("Something went wrong")
       }
